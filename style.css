@@ -1,0 +1,154 @@
+/* ============================================================
+   ARANN TECH — DESIGN SYSTEM v2
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --brand:        #F80A53;
+  --brand-dark:   #9E002D;
+  --brand-mid:    #C0144F;
+  --brand-glow:   rgba(248,10,83,0.22);
+  --brand-tint:   rgba(248,10,83,0.07);
+  --brand-border: rgba(248,10,83,0.18);
+
+  --bg:           #080810;
+  --bg-2:         #0E0E1A;
+  --bg-3:         #13131F;
+  --bg-card:      #111120;
+  --bg-card2:     #16162A;
+
+  --line:         rgba(255,255,255,0.07);
+  --line-brand:   rgba(237,20,80,0.15);
+
+  --glass:        rgba(255,255,255,0.035);
+  --glass-hover:  rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.08);
+
+  --white:   #FFFFFF;
+  --t-1:     #F0F2FA;
+  --t-2:     #B8BECC;
+  --t-3:     #767D96;
+  --t-4:     #4A506A;
+
+  --grad-brand: linear-gradient(135deg,#F80A53 0%,#9E002D 100%);
+  --grad-dark:  linear-gradient(160deg,#080810 0%,#0C0C1E 60%,#080810 100%);
+
+  --font:    'Inter', system-ui, sans-serif;
+  --display: 'Outfit', 'Inter', sans-serif;
+
+  --r-sm:   6px;
+  --r-md:   10px;
+  --r-lg:   16px;
+  --r-xl:   20px;
+  --r-2xl:  28px;
+  --r-full: 9999px;
+
+  --max-w:  1240px;
+
+  --sh-brand: 0 8px 32px rgba(237,20,80,0.30);
+  --sh-lg:    0 20px 60px rgba(0,0,0,0.6);
+  --sh-card:  0 2px 24px rgba(0,0,0,0.5);
+}
+
+/* ─── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--t-1);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a  { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img, svg { display: block; max-width: 100%; }
+button { cursor: pointer; border: none; background: none; font: inherit; }
+address { font-style: normal; }
+
+/* ─── Typography ─────────────────────────────────────────────── */
+h1,.h1 { font-family:var(--display); font-size:clamp(2.4rem,5vw,4rem); font-weight:800; line-height:1.08; letter-spacing:-.03em; }
+h2,.h2 { font-family:var(--display); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:700; line-height:1.15; letter-spacing:-.025em; }
+h3,.h3 { font-family:var(--display); font-size:clamp(1.1rem,2vw,1.5rem); font-weight:600; line-height:1.25; letter-spacing:-.01em; }
+h4,.h4 { font-family:var(--display); font-size:1.1rem; font-weight:600; line-height:1.4; }
+p { color:var(--t-2); line-height:1.75; }
+
+/* ─── Layout ─────────────────────────────────────────────────── */
+.wrap { width:100%; max-width:var(--max-w); margin:0 auto; padding:0 clamp(1rem,4vw,2rem); }
+
+.sec { padding: clamp(4rem,8vw,7rem) 0; position: relative; }
+.sec-sm { padding: clamp(2.5rem,5vw,4rem) 0; position: relative; }
+
+/* ─── Gradients & Text ──────────────────────────────────────── */
+.grad-text {
+  background: var(--grad-brand);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Section Label ──────────────────────────────────────────── */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: .72rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--brand); border: 1px solid var(--brand-border);
+  background: var(--brand-tint); border-radius: var(--r-full);
+  padding: .35rem .9rem; margin-bottom: 1.25rem;
+}
+.eyebrow::before {
+  content:''; width:5px; height:5px; border-radius:50%;
+  background:var(--brand); flex-shrink:0;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ─── Buttons ─────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .8rem 1.75rem; border-radius: var(--r-full);
+  font-size: .9375rem; font-weight: 600; white-space: nowrap;
+  transition: all .25s ease; position: relative; overflow: hidden;
+  border: 1px solid transparent;
+}
+.btn-primary {
+  background: var(--grad-brand); color: #fff;
+  box-shadow: var(--sh-brand);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(216,27,96,.5); }
+.btn-ghost {
+  background: var(--glass); color: var(--t-1);
+  border-color: var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+.btn-ghost:hover { background: var(--glass-hover); border-color: rgba(255,255,255,.15); transform: translateY(-2px); }
+
+.btn-lg { padding: .95rem 2.2rem; font-size: 1rem; }
+.btn-sm { padding: .6rem 1.25rem; font-size: .85rem; }
+
+.btn svg { width: 1em; height: 1em; transition: transform .2s ease; }
+.btn:hover svg { transform: translateX(3px); }
+
+/* ─── Cards ──────────────────────────────────────────────────── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-xl);
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.card:hover {
+  border-color: var(--brand-border);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.55), 0 0 0 1px var(--brand-border);
+}
+
+/* ─── Keyframes ──────────────────────────────────────────────── */
+@keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.45;transform:scale(.75)} }
+@keyframes ticker-loop { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes float-slow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+@keyframes glow-ring { 0%,100%{opacity:.25} 50%{opacity:.55} }
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width:900px) { .hide-mobile { display:none !important; } }
+@media (max-width:640px) { .hide-sm { display:none !important; } }

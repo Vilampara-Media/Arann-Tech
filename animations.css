@@ -1,0 +1,120 @@
+/* ============================================================
+   ARANN TECH — ANIMATIONS CSS
+   Helper keyframes and transition classes
+   ============================================================ */
+
+/* ─── Entry Animations ──────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Floating / Ambient Animations ────────────────────────── */
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%      { transform: translateY(-14px) rotate(2deg); }
+  66%      { transform: translateY(-6px) rotate(-1deg); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%      { transform: translateY(-10px) rotate(-2deg); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translateY(0px); }
+  40%      { transform: translateY(-18px); }
+  80%      { transform: translateY(-8px); }
+}
+
+/* ─── Glow Animations ───────────────────────────────────────── */
+@keyframes glow-pulse-brand {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(216,27,96,0.3), 0 0 40px rgba(216,27,96,0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(216,27,96,0.5), 0 0 80px rgba(216,27,96,0.2);
+  }
+}
+
+@keyframes border-glow {
+  0%, 100% { border-color: rgba(216,27,96,0.2); }
+  50%      { border-color: rgba(216,27,96,0.5); }
+}
+
+/* ─── Animated Mesh / Grid background ───────────────────────── */
+@keyframes mesh-drift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+
+/* ─── Hero SVG graphic animation ────────────────────────────── */
+@keyframes shield-appear {
+  0%   { opacity: 0; transform: scale(0.7) rotate(-15deg); }
+  60%  { opacity: 1; transform: scale(1.05) rotate(3deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+
+@keyframes orbit-reverse {
+  from { transform: rotate(0deg) translateX(110px) rotate(0deg); }
+  to   { transform: rotate(-360deg) translateX(110px) rotate(360deg); }
+}
+
+/* ─── Utility animation classes ─────────────────────────────── */
+.anim-float-1 { animation: float-1 6s ease-in-out infinite; }
+.anim-float-2 { animation: float-2 7s ease-in-out infinite 0.5s; }
+.anim-float-3 { animation: float-3 8s ease-in-out infinite 1s; }
+.anim-glow    { animation: glow-pulse-brand 3s ease-in-out infinite; }
+
+/* Stagger delay helpers */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+.delay-8 { animation-delay: 0.8s; }
+
+/* ─── Progress / loading bar ────────────────────────────────── */
+@keyframes progress-fill {
+  from { width: 0%; }
+  to   { width: var(--target-width, 100%); }
+}
+
+/* ─── Card tilt animation (applied via JS) ──────────────────── */
+.tilt-card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  transition: transform 0.1s ease;
+}
