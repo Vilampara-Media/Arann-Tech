@@ -1,1 +1,1 @@
-Arann Tech's new website designed for the home page.
+Arann Tech website design for the home page.
